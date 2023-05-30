@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">.
+  <title>Сайт МТС</title>
+  
+ </style>
+ <script>
+  function calculate() {
+      var table = document.getElementById("myTable");
+      var values = Array.from(table.querySelectorAll('td.price')).map(function(cell) {
+        return Number(cell.innerHTML);
+      });
+      var maxVal = Math.max(...values);
+      var minVal = Math.min(...values);
+      var sumSq = values.reduce(function(sum, value) {
+        return sum + value * value;
+      }, 0);
+      var avgVal = Math.sqrt(sumSq / values.length);
+      document.getElementById("max").innerHTML = maxVal;
+      document.getElementById("min").innerHTML = minVal;
+      document.getElementById("avg").innerHTML = avgVal;
+      }
+</script>
+</head>
+<body>
+
+  <nav style="margin-left: 0%;">    <! — —навигационный раздел с ссылками >
+  <a href="mtc.html">Главная</a>
+  <a href="finans.html" class="active2">Финансы</a>
+  <a href="maps.html">Контактные данные</a>
+  <a href="video.html">Видео</a>
+ </nav>
+
+ <!-- контент -->
+ <div class="content1">
+ 
+  <div class="red-block2">
+    <div style="font-size: 50px; 
+    text-align:center; margin-top: 10px; font-family:system-ui,
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 500;color: white;">Котировка цены акции компании МТС</div>
+  </div>
+  <div class="cena" style="margin-top: 155px; text-align: center; margin-left: 160px; font-size: 30px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+    <table border="1" id="myTable">
+
+      <tr>
+        <td>1.04.2023</td>
+        <td>4.04.2023</td>
+        <td>7.04.2023</td>
+        <td>10.04.2023</td>
+        <td>13.04.2023</td>
+        <td>16.04.2023</td>
+        <td>19.04.2023</td>
+        <td>23.04.2023</td>
+        <td>26.04.2023</td>
+        <td>30.04.2023</td>
+      </tr>
+
+      <tr>
+        <td class="price">253</td>
+        <td class="price">275</td>
+        <td class="price">332</td>
+        <td class="price">340</td>
+        <td class="price">355</td>
+        <td class="price">230</td>
+        <td class="price">254</td>
+        <td class="price">421</td>
+        <td class="price">321</td>
+        <td class="price">342</td>
+       </tr>
+
+     </table>
+</div>
+  <div class="red-block3">
+    <div style="font-size: 50px; 
+    text-align:center; margin-top: 0px; font-family:system-ui,
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 500;color: white;"> <div style="margin-top: 5px;">Расчет показателей</div></div>
+  </div>
+ </div>
+ <div class="mcena" style="font-size: 30px; text-align: center; margin-top: 110px; margin-left: -90px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+  <button style="font-size: 20px; background-color: grey;" onclick="calculate()">Рассчитать основные показатели</button>
+  <p>Max.value: <span id="max"></span></p>
+  <p>Min.value: <span id="min"></span></p>
+  <p>Avg.value: <span id="avg"></span></p>
+ </div>
+
+<div style=" width: 80%; height: 10%; background-color: red; position: fixed; margin-top:-20px; left: 140px; z-index: -1;">
+  <div style="font-size: 50px; 
+    text-align:center; margin-top: 0px; font-family:system-ui,
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-weight: 500;color:
+    white;"> <div style="margin-top: 8px;">Капитализация и количество обращающихся акций</div>
+</div>
+<div style="font-size: 30px; margin-top: 40px; margin-left: 30px; font-family: system-ui,
+ -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 
+ Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; text-align: center;" >
+
+  <P>Капитплитзация: <b>625 916 485 855₽</b></P>
+  <P>Количество обращающихся акций: <b>1 167 000</b></P>
+
+</div>
+
+</body>
+</html>
